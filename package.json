@@ -19,7 +19,6 @@
     "query-string": "^7.0.1"
   },
   "devDependencies": {
-    "fake": "^0.2.2",
     "faker": "^5.5.3",
     "nodemon": "^2.0.12"
   }

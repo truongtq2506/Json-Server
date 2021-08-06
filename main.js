@@ -52,9 +52,11 @@ router.render = (req, res) => {
     body: res.locals.data,
   })
 }
-
 // Use default router
 server.use('/api', router) // ** run when url have /api
-server.listen(3000, () => {
+
+// start server
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
   console.log('JSON Server is running')
 })
