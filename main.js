@@ -18,7 +18,7 @@ server.use((req, res, next) => {
   if (req.method === 'POST') {
     req.body.createdAt = Date.now()
     req.body.updateAt = Date.now()
-  } else if(req.method === 'PATCH') {
+  } else if (req.method === 'PATCH') {
     req.body.updateAt = Date.now()
   }
   // Continue to JSON Server router
