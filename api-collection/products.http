@@ -52,4 +52,34 @@ Content-Type: application/json
 ###
 
 # @name remove
-DELETE {{baseUrl}}/{{resourceName}}/3
+DELETE {{baseUrl}}/{{resourceName}}/7e8dc2a8-7a28-459b-a770-5d06dc1a16ce
+
+
+# ****EXAMPLE****
+
+### ADD NEW  
+
+# @name addNewProduct
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+ {
+    "categoryId": "7e8dc2a8-7a28-459b-a770-5d06dc1a16ce",
+    "name": "Gorgeous Rubber Keyboard",
+    "color": "mint green",
+    "price": 282,
+    "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+    "thumbnailUrl": "http://placeimg.com/200/200"
+  }
+
+### UPDATE PRODUCT
+
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/qYb2wnM
+Content-Type: application/json
+
+ {
+    "name": "Gorgeous Rubber Keyboard",
+    "color": "red",
+    "price": 828
+  }
