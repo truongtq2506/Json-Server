@@ -1,0 +1,25 @@
+{
+  "name": "maxjsonsever",
+  "version": "1.0.0",
+  "description": "initial json server ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js",
+    "start": "node main.js",
+    "generate-data": "node generate-data.js"
+  },
+  "keywords": [
+    "json-server"
+  ],
+  "author": "Max",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  },
+  "devDependencies": {
+    "fake": "^0.2.2",
+    "faker": "^5.5.3",
+    "nodemon": "^2.0.12"
+  }
+}
