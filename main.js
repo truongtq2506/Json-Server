@@ -1,3 +1,4 @@
+const queryString = require('query-string')
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const router = jsonServer.router('db.json')
@@ -24,6 +25,33 @@ server.use((req, res, next) => {
   // Continue to JSON Server router
   next()
 })
+
+// In this example, returned resources will be wrapped in a body property
+router.render = (req, res) => {
+  console.log(req)
+  // check GET with pagination
+  // if yes, custom output
+  const headers = res.getHeaders()
+  const totalCountHeader = headers['x-total-count']
+  if (req.method === 'GET' && totalCountHeader) {
+    const queryParam = queryString.parse(req._parsedUrl.query)
+    console.log({ queryParam })
+
+    const result = {
+      data: res.locals.data,
+      pagination: {
+        _page: Number.parseInt(queryParam._page) || 1,
+        _limit: Number.parseInt(queryParam._limit) || 10,
+        _totalRows: Number.parseInt(totalCountHeader),
+      },
+    }
+    return res.json(result)
+  }
+  //Otherwhise return default behavor
+  res.jsonp({
+    body: res.locals.data,
+  })
+}
 
 // Use default router
 server.use('/api', router) // ** run when url have /api

@@ -15,7 +15,8 @@
   "author": "Max",
   "license": "MIT",
   "dependencies": {
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "query-string": "^7.0.1"
   },
   "devDependencies": {
     "fake": "^0.2.2",

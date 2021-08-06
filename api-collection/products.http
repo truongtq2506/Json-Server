@@ -16,7 +16,7 @@ GET {{baseUrl}}/{{resourceName}}?color=green&price_gte=950
 ### Pagination
 
 # @name pagination
-GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=2
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
 
 ### SORT
 
@@ -83,3 +83,14 @@ Content-Type: application/json
     "color": "red",
     "price": 828
   }
+
+
+// CUSTOM DATA OUT PUT have Pagination
+// 1 how to know response have pagination (detect) by HEADER
+// custom return data & pagination
+
+// X-Total-Count: 32  => using pagination
+
+
+
+
